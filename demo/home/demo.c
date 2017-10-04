@@ -5,7 +5,7 @@ void could_you_call_me(){
 }
 
 int main(){
-    put("Flag is my secrete, I wont give it to you :D");
+    puts("Flag is my secrete, I wont give it to you :D");
     char buf[0x20];
     gets( buf );
     return 0;
