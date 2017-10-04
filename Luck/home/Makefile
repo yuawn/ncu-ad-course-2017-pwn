@@ -1,2 +1,2 @@
 luck:luck.c
-	gcc -fno-stack-protector luck.c -o luck
+	gcc luck.c -o luck
