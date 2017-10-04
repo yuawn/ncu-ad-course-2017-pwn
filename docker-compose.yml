@@ -1,0 +1,9 @@
+bof:
+    build: ./baby_bof
+    volumes:
+        - ./baby_bof/home:/home/baby_bof:ro
+        - ./baby_bof/xinetd:/etc/xinetd.d/xinetd:ro
+    ports:
+        - "10100:4597"
+    expose:
+        - "4597"
