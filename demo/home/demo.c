@@ -1,9 +1,7 @@
 #include<stdio.h>
 
 void could_you_call_me(){
-    system("cat ./flag");
-    fflush(stdout);
-    puts("aaaaaa");
+    system("cat flag");
     fflush(stdout);
 }
 
