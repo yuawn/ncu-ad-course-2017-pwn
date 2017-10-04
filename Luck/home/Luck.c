@@ -1,4 +1,5 @@
 #include<stdio.h>
+#include<stdlib.h>
 
 int main(){
     setvbuf(stdout,0,2,0);
@@ -12,7 +13,7 @@ int main(){
     int a = 0 , b = 1;
     char something[8];
 
-    puts( "What do you want to tell me:" )
+    puts( "What do you want to tell me:" );
     read( 0 , something , 100 );
 
     if( a == 0xfaceb00c && b == 0xdeadbeef ){
