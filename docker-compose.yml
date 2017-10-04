@@ -28,3 +28,13 @@ luck:
         - "10101:4597"
     expose:
         - "4597"
+
+shellcode:
+    build: ./shellcode
+    volumes:
+        - ./shellcode/home:/home/shellcode:ro
+        - ./shellcode/xinetd:/etc/xinetd.d/xinetd:ro
+    ports:
+        - "10103:4597"
+    expose:
+        - "4597"
