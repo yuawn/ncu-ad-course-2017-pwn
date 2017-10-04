@@ -1,8 +1,8 @@
 #include<stdio.h>
 
 void could_you_call_me(){
-    system("cat flag");
-    fflush(stdout);
+    system("cat /home/deno/flag");
+    //fflush(stdout);
 }
 
 int main(){
