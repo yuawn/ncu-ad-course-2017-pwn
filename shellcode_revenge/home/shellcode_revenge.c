@@ -9,16 +9,8 @@ int main(){
 
     int (*yuawn)() = (int(*)())code;
 
-    char input[100];
+    read( 0 , code , 16 );
 
-    int len = read( 0 , input , 100 );
-
-    if( len > 16 ){
-        printf( "Your input size is %d , only 16 bytes!\n" );
-        exit(0);
-    }
-
-    memcpy( code , input , sizeof( code ) );
     puts("Your shellcode is running...");
     yuawn();
 
