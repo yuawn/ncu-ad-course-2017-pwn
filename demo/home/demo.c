@@ -6,7 +6,10 @@ void could_you_call_me(){
 
 int main(){
     puts("Flag is my secrete, I wont give it to you :D");
-    char buf[0x20];
+    fflush(stdout);
+
+    char buf[16];
     gets( buf );
+
     return 0;
 }
