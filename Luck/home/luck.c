@@ -9,9 +9,9 @@ int main(){
 
     puts("GOOD LUCK:");
 
+    char something[8];
     int password = random();
     int a = 0 , b = 1;
-    char something[8];
 
     puts( "What do you want to tell me:" );
     read( 0 , something , 100 );
