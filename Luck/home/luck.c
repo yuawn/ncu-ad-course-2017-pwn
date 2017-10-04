@@ -30,10 +30,13 @@ int main(){
             system( "sh" );
         }
         else{
-            puts( "Bye Muggle :(" );
+            puts( "Bad Luck :(" );
             exit(0);
         }
     }
+
+    puts( "Bye Muggle :(" );
+    exit(0);
 
     return 0;
 }
