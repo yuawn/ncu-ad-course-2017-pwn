@@ -1,6 +1,8 @@
 #!/usr/bin/env python
 from pwn import *
 
+# AD{We1c0me_h4cker!_:P}
+
 context.arch = 'amd64'
 
 host , port = 'ctf.yuawn.idv.tw' , 10100
