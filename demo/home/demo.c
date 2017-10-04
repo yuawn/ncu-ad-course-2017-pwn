@@ -1,7 +1,7 @@
 #include<stdio.h>
 
 void could_you_call_me(){
-    system("cat /home/deno/flag");
+    system("cat /home/demo/flag");
     //fflush(stdout);
 }
 
