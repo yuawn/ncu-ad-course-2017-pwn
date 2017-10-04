@@ -14,6 +14,17 @@ bof:
         - ./baby_bof/home:/home/baby_bof:ro
         - ./baby_bof/xinetd:/etc/xinetd.d/xinetd:ro
     ports:
+        - "10102:4597"
+    expose:
+        - "4597"
+
+
+luck:
+    build: ./luck
+    volumes:
+        - ./luck/home:/home/luck:ro
+        - ./luck/xinetd:/etc/xinetd.d/xinetd:ro
+    ports:
         - "10101:4597"
     expose:
         - "4597"
