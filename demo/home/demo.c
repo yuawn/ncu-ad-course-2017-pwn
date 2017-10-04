@@ -2,6 +2,7 @@
 
 void could_you_call_me(){
     system("cat ./flag");
+    fflush(stdout);
 }
 
 int main(){
