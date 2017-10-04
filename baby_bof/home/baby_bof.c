@@ -5,8 +5,8 @@ void you_cant_see_this_its_too_evil(){
 }
 
 int main(){
+    setvbuf(stdout,0,2,0);
     puts("Welcome to NCU AD 2017 Fall, Im yuawn :)");
-    fflush(stdout);
 
     char buf[20];
     gets( buf );
