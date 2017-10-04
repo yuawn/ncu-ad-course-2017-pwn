@@ -6,7 +6,7 @@ int main(){
     char buf[100];
     printf( "Your input buffer address is %p" , buf );
 
-    read( 0 , buf , 116 );
+    read( 0 , buf , 0x80 );
 
     return 0;
 }
