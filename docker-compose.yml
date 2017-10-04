@@ -38,3 +38,13 @@ shellcode:
         - "10103:4597"
     expose:
         - "4597"
+
+shellcode_revenge:
+    build: ./shellcode_revenge
+    volumes:
+        - ./shellcode_revenge/home:/home/shellcode_revenge:ro
+        - ./shellcode_revenge/xinetd:/etc/xinetd.d/xinetd:ro
+    ports:
+        - "10104:4597"
+    expose:
+        - "4597"
