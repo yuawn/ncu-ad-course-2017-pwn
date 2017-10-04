@@ -14,11 +14,11 @@ int main(){
     int len = read( 0 , input , 100 );
 
     if( len > 16 ){
-        printf( "Your input size is %d , only 16 bytes!\n" )
+        printf( "Your input size is %d , only 16 bytes!\n" );
         exit(0);
     }
 
-    memcpy( code , input , sizeof( code ) )
+    memcpy( code , input , sizeof( code ) );
     puts("Your shellcode is running...");
     yuawn();
 
