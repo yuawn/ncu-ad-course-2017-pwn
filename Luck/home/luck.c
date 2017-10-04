@@ -14,6 +14,8 @@ int main(){
 
     puts( "What do you want to tell me:" );
     read( 0 , &a , 100 );
+    
+    printf("You say: %s\n" , &a);
 
     if( b == 0xfaceb00c && c == 0xdeadbeef ){
         puts( "Hello hacker, now guess the password." );
