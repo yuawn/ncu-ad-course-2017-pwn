@@ -5,7 +5,7 @@ void you_cant_see_this_its_too_evil(){
 }
 
 int main(){
-    puts("Welcome to NCU AD 2017 Fall, Im yuawn :)")
+    puts("Welcome to NCU AD 2017 Fall, Im yuawn :)");
     fflush(stdout);
 
     char buf[20];
