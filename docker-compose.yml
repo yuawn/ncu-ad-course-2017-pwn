@@ -69,6 +69,16 @@ ret2libc:
     expose:
         - "4597"
 
+end:
+    build: ./end
+    volumes:
+        - ./end/home:/home/end:ro
+        - ./end/xinetd:/etc/xinetd.d/xinetd:ro
+    ports:
+        - "10108:4597"
+    expose:
+        - "4597"
+
 ncu_center:
     build: ./ncu_center
     volumes:

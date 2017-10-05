@@ -1,0 +1,15 @@
+service end
+{
+        disable = no
+        type = UNLISTED
+        wait = no
+        server = /home/end/run.sh
+        socket_type = stream
+        protocol = tcp
+        user = end
+        port = 4597
+        flags = REUSE
+        per_source = 10
+        rlimit_cpu = 3
+        nice = 18
+}
