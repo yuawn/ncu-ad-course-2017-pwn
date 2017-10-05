@@ -57,6 +57,12 @@ int main(){
                 }
                 printf( "What do you want to store in mem page %d :" , i );
                 read( 0 , s[i - 1] , 0x10 );
+                for( int j = 9 ; j > -1 ; j-- ) {
+                    if( s[i - 1][j] == '\x0a' ){
+                        s[i - 1][j] = '\x00';
+                        break;
+                    }
+                }
                 puts("done!");
                 break;
             case 3:
@@ -85,6 +91,12 @@ int main(){
                 }
                 printf( "Edit memo page %d :" , n  );
                 read( 0 , s[i - 1] , size );
+                for( int j = 9 ; j > -1 ; j-- ) {
+                    if( s[i - 1][j] == '\x0a' ){
+                        s[i - 1][j] = '\x00';
+                        break;
+                    }
+                }
                 size = strlen( s[i - 1] );
                 if( size > 0x36 ){
                     puts( "Too long!" );
