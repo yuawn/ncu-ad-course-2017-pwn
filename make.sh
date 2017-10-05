@@ -5,3 +5,4 @@ cd ../../baby_bof/home && make
 cd ../../shellcode/home && make
 cd ../../shellcode_revenge/home && make
 cd ../../rop/home && make
+cd ../../ret2libc/home && make
