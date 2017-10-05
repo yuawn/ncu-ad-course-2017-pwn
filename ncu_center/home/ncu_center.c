@@ -39,6 +39,10 @@ int main(){
             case 2:
                 printf("Which one do you want to store in (1 , 2 , 3)?:");
                 scanf( "%d" , n );
+                if( n < 1 || n > 3 ){
+                    puts( "Nop!" );
+                    exit(0);
+                }
                 printf( "What do you want to store in mem page %d :" , n );
                 read( 0 , s[n] , 0x30 );
                 puts("done!");
@@ -46,6 +50,10 @@ int main(){
             case 3:
                 printf("Which memo page do you want to see (1 , 2 , 3)?:");
                 scanf( "%d" , n );
+                if( n < 1 || n > 3 ){
+                    puts( "Nop!" );
+                    exit(0);
+                }
                 if( strlen( s[n] ) < 1 ) {
                     puts("There is nothing in this memo page, please store something first.");
                     break;
@@ -55,6 +63,10 @@ int main(){
             case 4:
                 printf("Which memo page do you want to edit (1 , 2 , 3)?:");
                 scanf( "%d" , n );
+                if( n < 1 || n > 3 ){
+                    puts( "Nop!" );
+                    exit(0);
+                }
                 if( strlen( s[n] ) < 1 ) {
                     puts("There is nothing in this memo page, please store something first.");
                     break;
