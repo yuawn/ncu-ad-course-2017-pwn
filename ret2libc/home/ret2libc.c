@@ -4,8 +4,8 @@
 int main(){
     setvbuf(stdout,0,2,0);
     printf( "Where do you want to see in the memory? Give me the address in decimal:" );
-    int *p;
-    scanf( '%ld' , p );
+    long *p;
+    scanf( '%ld' , &p );
     printf( "The value in memory at %p is %p." , p , *p );
 
     puts("Bypass the check, and ret2libcccccccccccc");
