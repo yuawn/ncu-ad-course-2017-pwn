@@ -11,7 +11,7 @@ int main(){
     puts("Bypass the check, and ret2libcccccccccccc");
 
     char buf[10];
-    read( 0 , buf , 200 )
+    read( 0 , buf , 200 );
     
     if( strlen( buf ) > 6 ) {
         puts( "It could not > 6. If you want the flag, Over my dead body!!!!!" );
