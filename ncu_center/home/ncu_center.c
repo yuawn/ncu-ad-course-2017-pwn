@@ -29,7 +29,7 @@ int main(){
     puts( "Welcome to NCU center" );
 
     //char a[0x30] , b[0x30] , c[0x30];
-    char s[3][0x30];
+    char s[3][0x10];
     int size = 0x30 , n , i;
     //a[0] = a[1] = a[2] = 0x30;
 
