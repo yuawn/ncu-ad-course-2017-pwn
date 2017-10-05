@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 from pwn import *
 
-# AD{We1c0me_h4cker!_:P}
+# AD{Re7urn_1nt0_1ibc_i5_4wes0me!!!}
 
 context.arch = 'amd64'
 
