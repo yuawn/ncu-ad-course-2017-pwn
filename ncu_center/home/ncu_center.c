@@ -38,7 +38,7 @@ int main(){
                 break;
             case 2:
                 printf("Which one do you want to store in (1 , 2 , 3)?:");
-                scanf( "%d" , i );
+                scanf( "%d" , &i );
                 if( i < 1 || i > 3 ){
                     puts( "Nop!" );
                     exit(0);
@@ -49,7 +49,7 @@ int main(){
                 break;
             case 3:
                 printf("Which memo page do you want to see (1 , 2 , 3)?:");
-                scanf( "%d" , i );
+                scanf( "%d" , &i );
                 if( i < 1 || i > 3 ){
                     puts( "Nop!" );
                     exit(0);
@@ -62,7 +62,7 @@ int main(){
                 break;
             case 4:
                 printf("Which memo page do you want to edit (1 , 2 , 3)?:");
-                scanf( "%d" , i );
+                scanf( "%d" , &i );
                 if( i < 1 || i > 3 ){
                     puts( "Nop!" );
                     exit(0);
