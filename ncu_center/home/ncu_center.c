@@ -15,7 +15,7 @@ void menu(){
 void echo(){
     char s[0x78];
     int i = 3;
-    puts( "echo~~~~~ech~~~~co~~~ echo 3 times." )
+    puts( "echo~~~~~ech~~~~co~~~ echo 3 times." );
     while( i-- ){
         printf("What do you want to say:");
         read( 0 , s , 0x80 );
