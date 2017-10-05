@@ -85,6 +85,10 @@ int main(){
                 printf( "Edit memo page %d :" , n  );
                 read( 0 , s[i - 1] , size );
                 size = strlen( s[i - 1] );
+                if( size > 0x36 ){
+                    puts( "Too long!" );
+                    exit(0);
+                }
                 printf( "done! new size : %d\n" , size );
                 break;
             case 5:
