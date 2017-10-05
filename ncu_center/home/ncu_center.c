@@ -41,7 +41,7 @@ int main(){
 
     //char a[0x30] , b[0x30] , c[0x30];
     char s[3][0x10];
-    int size = 0x30 , n , i;
+    int size = 0x10 , n , i;
     //a[0] = a[1] = a[2] = 0x30;
 
     while(1){
@@ -59,7 +59,7 @@ int main(){
                     exit(0);
                 }
                 printf( "What do you want to store in mem page %d :" , i );
-                read( 0 , s[i - 1] , 0x30 );
+                read( 0 , s[i - 1] , 0x10 );
                 puts("done!");
                 break;
             case 3:
