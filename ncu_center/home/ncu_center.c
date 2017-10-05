@@ -23,14 +23,10 @@ int read_int(){
 
 
 void echo(){
-    char s[0x78];
-    int i = 3;
-    puts( "echo~~~~~ech~~~~co~~~ echo 3 times." );
-    while( i-- ){
-        printf("What do you want to say:");
-        read( 0 , s , 0x80 );
-        printf( "You said: %s\n" , s );
-    }
+    char s[0x70];
+    printf("What do you want to say:");
+    read( 0 , s , 0x70 );
+    printf( "You said: %s\n" , s );
 }
 
 
