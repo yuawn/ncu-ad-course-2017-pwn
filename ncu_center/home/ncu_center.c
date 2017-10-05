@@ -13,10 +13,14 @@ void menu(){
 }
 
 void echo(){
-    char s[0x70];
-    printf("What do you want to say:");
-    read( 0 , s , 0x70 );
-    printf( "You said: %s\n" , s );
+    char s[0x78];
+    int i = 3;
+    puts( "echo~~~~~ech~~~~co~~~ echo 3 times." )
+    while( i-- ){
+        printf("What do you want to say:");
+        read( 0 , s , 0x80 );
+        printf( "You said: %s\n" , s );
+    }
 }
 
 
@@ -26,8 +30,8 @@ int main(){
 
     //char a[0x30] , b[0x30] , c[0x30];
     char s[3][0x30];
-    int a[3] , n , i;
-    a[0] = a[1] = a[2] = 0x30;
+    int size = 0x30 , n , i;
+    //a[0] = a[1] = a[2] = 0x30;
 
     while(1){
         menu();
@@ -72,9 +76,9 @@ int main(){
                     break;
                 }
                 printf( "Edit memo page %d :" , n  );
-                read( 0 , s[i - 1] , a[i - 1] );
-                a[i] = strlen( s[i - 1] );
-                printf( "done! new size : %d\n" , a[i - 1] );
+                read( 0 , s[i - 1] , size );
+                size = strlen( s[i - 1] );
+                printf( "done! new size : %d\n" , size );
                 break;
             case 5:
                 puts("Bye!");
