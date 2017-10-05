@@ -14,7 +14,7 @@ void menu(){
 
 int read_int(){
     char buf[16];
-    if( __read_chk(0,buf,15,16); <= 0 ){
+    if( __read_chk(0,buf,15,16) <= 0 ){
         puts("read error");
         _exit(1);
     }
