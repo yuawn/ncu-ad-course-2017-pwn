@@ -44,7 +44,7 @@ int main(){
                     exit(0);
                 }
                 printf( "What do you want to store in mem page %d :" , i );
-                read( 0 , s[i] , 0x30 );
+                read( 0 , s[i - 1] , 0x30 );
                 puts("done!");
                 break;
             case 3:
@@ -54,11 +54,11 @@ int main(){
                     puts( "Nop!" );
                     exit(0);
                 }
-                if( strlen( s[i] ) < 1 ) {
+                if( strlen( s[i - 1] ) < 1 ) {
                     puts("There is nothing in this memo page, please store something first.");
                     break;
                 }
-                printf( "memo page %d : %s" , n , s[i] );
+                printf( "memo page %d : %s" , n , s[i - 1] );
                 break;
             case 4:
                 printf("Which memo page do you want to edit (1 , 2 , 3)?:");
@@ -67,14 +67,14 @@ int main(){
                     puts( "Nop!" );
                     exit(0);
                 }
-                if( strlen( s[i] ) < 1 ) {
+                if( strlen( s[i - 1] ) < 1 ) {
                     puts("There is nothing in this memo page, please store something first.");
                     break;
                 }
                 printf( "Edit memo page %d :" , n  );
-                read( 0 , s[i] , a[i] );
-                a[i] = strlen( s[i] );
-                printf( "done! new size : %d\n" , a[i] );
+                read( 0 , s[i - 1] , a[i - 1] );
+                a[i] = strlen( s[i - 1] );
+                printf( "done! new size : %d\n" , a[i - 1] );
                 break;
             case 5:
                 puts("Bye!");
