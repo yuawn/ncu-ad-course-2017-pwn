@@ -26,6 +26,7 @@ void echo(){
 
 int main(){
     setvbuf(stdout,0,2,0);
+    setvbuf(stdin,0,2,0);
     puts( "Welcome to NCU center" );
 
     //char a[0x30] , b[0x30] , c[0x30];
