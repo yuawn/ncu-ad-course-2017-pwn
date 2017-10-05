@@ -12,6 +12,16 @@ void menu(){
     puts( "Your choice:" );
 }
 
+int read_int(){
+    char buf[16];
+    if( __read_chk(0,buf,15,16); <= 0 ){
+        puts("read error");
+        _exit(1);
+    }
+    return atoi(buf);
+}
+
+
 void echo(){
     char s[0x78];
     int i = 3;
@@ -36,14 +46,14 @@ int main(){
 
     while(1){
         menu();
-        scanf( "%d" , &n );
+        n = read_int();
         switch( n ){
             case 1:
                 echo();
                 break;
             case 2:
                 printf("Which one do you want to store in (1 , 2 , 3)?:");
-                scanf( "%d" , &i );
+                i = read_int();
                 if( i < 1 || i > 3 ){
                     puts( "Nop!" );
                     exit(0);
@@ -54,7 +64,7 @@ int main(){
                 break;
             case 3:
                 printf("Which memo page do you want to see (1 , 2 , 3)?:");
-                scanf( "%d" , &i );
+                i = read_int();
                 if( i < 1 || i > 3 ){
                     puts( "Nop!" );
                     exit(0);
@@ -67,7 +77,7 @@ int main(){
                 break;
             case 4:
                 printf("Which memo page do you want to edit (1 , 2 , 3)?:");
-                scanf( "%d" , &i );
+                i = read_int();
                 if( i < 1 || i > 3 ){
                     puts( "Nop!" );
                     exit(0);
