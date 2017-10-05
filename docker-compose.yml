@@ -58,3 +58,13 @@ rop:
         - "10105:4597"
     expose:
         - "4597"
+
+ret2libc:
+    build: ./ret2libc
+    volumes:
+        - ./ret2libc/home:/home/ret2libc:ro
+        - ./ret2libc/xinetd:/etc/xinetd.d/xinetd:ro
+    ports:
+        - "10106:4597"
+    expose:
+        - "4597"
