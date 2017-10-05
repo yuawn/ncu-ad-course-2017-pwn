@@ -76,7 +76,7 @@ int main(){
                     puts("There is nothing in this memo page, please store something first.");
                     break;
                 }
-                printf( "memo page %d : %s" , n , s[i - 1] );
+                printf( "memo page %d : %s\n" , n , s[i - 1] );
                 break;
             case 4:
                 printf("Which memo page do you want to edit (1 , 2 , 3)?:");
