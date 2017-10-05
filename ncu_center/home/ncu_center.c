@@ -37,6 +37,7 @@ int main(){
 
     //char a[0x30] , b[0x30] , c[0x30];
     char s[3][0x10];
+    memset( s[0] , 0 , 0x30 );
     int size = 0x10 , n , i;
     //a[0] = a[1] = a[2] = 0x30;
 
