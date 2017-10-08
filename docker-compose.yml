@@ -88,3 +88,23 @@ ncu_center:
         - "10107:4597"
     expose:
         - "4597"
+
+rop_revenge:
+    build: ./rop_revenge
+    volumes:
+        - ./rop_revenge/home:/home/rop_revenge:ro
+        - ./rop_revenge/xinetd:/etc/xinetd.d/xinetd:ro
+    ports:
+        - "10109:4597"
+    expose:
+        - "4597"
+
+shellcode_revenge++:
+    build: ./shellcode_revenge++
+    volumes:
+        - ./shellcode_revenge++/home:/home/shellcode_revenge++s:ro
+        - ./shellcode_revenge++/xinetd:/etc/xinetd.d/xinetd:ro
+    ports:
+        - "10110:4597"
+    expose:
+        - "4597"
