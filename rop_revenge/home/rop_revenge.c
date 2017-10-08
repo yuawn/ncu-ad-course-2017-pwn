@@ -1,13 +1,12 @@
 #include<stdio.h>
 
-char name[0x20];
+char name[0x30];
 
 int main(){
     setvbuf(stdout,0,2,0);
-    setvbuf(stdin,0,2,0);
     puts( "What your name?" );
 
-    read( 0 , name , 0x20 );
+    read( 0 , name , 0x30 );
     printf( "Hello! %s\nWhat do you want to say?\n" , name );
 
     
