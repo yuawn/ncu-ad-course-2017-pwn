@@ -14,7 +14,5 @@ int main(){
     read( 0  , buf , 0x30 );
     puts( "Only one gadget, Hacker go away~" );
 
-    printf( "See you next time! %s\n" , name );
-
     return 0;
 }

