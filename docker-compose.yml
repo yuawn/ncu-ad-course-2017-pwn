@@ -99,7 +99,7 @@ rop_revenge:
     expose:
         - "4597"
 
-shellcode_revenge++:
+shellcode_revenge_plus_plus:
     build: ./shellcode_revenge++
     volumes:
         - ./shellcode_revenge++/home:/home/shellcode_revenge++s:ro
