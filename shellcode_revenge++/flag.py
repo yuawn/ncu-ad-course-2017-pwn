@@ -1,9 +1,9 @@
 #!/usr/bin/env python
 from pwn import *
 
-# AD{She11c0d1ng_1s_funnnnnnnnnn}
+# 
 
-host , port = 'ctf.yuawn.idv.tw' , 10104
+host , port = 'ctf.yuawn.idv.tw' , 10110
 y = remote( host , port )
 
 

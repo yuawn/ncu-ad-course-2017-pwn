@@ -102,7 +102,7 @@ rop_revenge:
 shellcode_revenge_plus_plus:
     build: ./shellcode_revenge++
     volumes:
-        - ./shellcode_revenge++/home:/home/shellcode_revenge++s:ro
+        - ./shellcode_revenge++/home:/home/shellcode_revenge++:ro
         - ./shellcode_revenge++/xinetd:/etc/xinetd.d/xinetd:ro
     ports:
         - "10110:4597"
