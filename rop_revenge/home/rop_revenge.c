@@ -4,6 +4,7 @@ char name[0x20];
 
 int main(){
     setvbuf(stdout,0,2,0);
+    setvbuf(stdin,0,2,0);
     puts( "What your name?" );
 
     read( 0 , name , 0x20 );

