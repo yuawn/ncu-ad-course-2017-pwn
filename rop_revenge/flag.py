@@ -1,11 +1,11 @@
 #!/usr/bin/env python
 from pwn import *
 
-# AD{U_1earn7_r0000000000000000000p!}
+# 
 
 context.arch = 'amd64'
 
-host , port = 'ctf.yuawn.idv.tw' , 10105
+host , port = 'ctf.yuawn.idv.tw' , 10109
 y = remote( host , port )
 
 bss = 0x6cbb60
