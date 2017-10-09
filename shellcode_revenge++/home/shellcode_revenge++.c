@@ -26,7 +26,7 @@ int main(){
 
     check( len );
 
-    printf('Hello %s! Leave some messege for me!' , name);
+    printf( "Hello %s! Leave some messege for me!" , name );
     char buf[0x10];
     read( 0 , buf , 0x20 );
 
