@@ -18,7 +18,7 @@ int main(){
     puts( "Name always contain printable characters, isn't it?" );
     puts( "What your name, ONLY contains [ 'a'~'z' 'A'~'Z' '0'~'9' ':' '>' '=' '<' '^' '_' ]:");
 
-    len = __read_chk( 0 , name , 99 , 100 )
+    len = __read_chk( 0 , name , 99 , 100 );
     if( len <= 0 ){
         puts("read error");
         _exit(1);
