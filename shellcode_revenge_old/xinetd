@@ -1,0 +1,15 @@
+service shellcode_revenge_old
+{
+        disable = no
+        type = UNLISTED
+        wait = no
+        server = /home/shellcode_revenge_old/run.sh
+        socket_type = stream
+        protocol = tcp
+        user = shellcode_revenge_old
+        port = 4597
+        flags = REUSE
+        per_source = 10
+        rlimit_cpu = 3
+        nice = 18
+}
