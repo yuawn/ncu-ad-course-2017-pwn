@@ -5,8 +5,9 @@ int len;
 char name[100];
 
 void check( len ){
-    for( int i = 0 ; i < len ; i++ ){
-        if( ( name[i] < '0' || name[i] > '9' ) && ( name[i] < 'a' || name[i] > 'z' ) && ( name[i] >= 'A' || name[i] <= 'Z' ) &&  ( name[i] < ';' || name[i] > '>' ) && name[i] != '^' && name[i] != '_' && name[i] != '\n' ) {
+    if( name[len - 1] == '\n' ) name[len - 1] = '\x00';
+    for( int i = 0 ; i < len - 1 ; i++ ){
+        if( ( name[i] < '0' || name[i] > '9' ) && ( name[i] < 'a' || name[i] > 'z' ) && ( name[i] >= 'A' || name[i] <= 'Z' ) &&  ( name[i] < ';' || name[i] > '>' ) && name[i] != '^' && name[i] != '_' ) {
             puts( "Your name contains unprintable characters!, are you hacker? GO AWAY!!!!!" );
             exit(0);
         }
