@@ -108,3 +108,13 @@ shellcode_revenge_plus_plus:
         - "10110:4597"
     expose:
         - "4597"
+
+baby_ghost:
+    build: ./baby_ghost
+    volumes:
+        - ./baby_ghost/home:/home/baby_ghost:ro
+        - ./baby_ghost/xinetd:/etc/xinetd.d/xinetd:ro
+    ports:
+        - "10111:4597"
+    expose:
+        - "4597"

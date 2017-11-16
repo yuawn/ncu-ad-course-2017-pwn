@@ -9,3 +9,4 @@ cd ../../rop/home && make
 cd ../../rop_revenge/home && make
 cd ../../ret2libc/home && make
 cd ../../ncu_center/home && make
+cd ../../baby_ghost/home && make
