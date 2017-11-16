@@ -137,7 +137,7 @@ void mod_ghost(){
         puts( "Wooooooooo~~~ miss me?" );
         return;
     }
-    else if( g = 0x9487 ){
+    else if( g == 0x9487 ){
         puts( "I got you WA HA HA." );
         exit(0);
     }
