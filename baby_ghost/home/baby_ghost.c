@@ -107,7 +107,7 @@ void add_ghost(){
         g->name = tmp;
         printf( "ghost name :" );
         read( 0 , g->name , size );
-        puts( "You let me free, it must have some blood this night." );
+        puts( "You let me free, it must has some blood this night." );
         return;
     }
     puts( "There is already a ghost!!!!! RUN!!!!!" );
