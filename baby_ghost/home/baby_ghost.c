@@ -58,7 +58,7 @@ int main(){
     setvbuf(stdin,0,2,0);
     puts( "Woooooo~~~ Where is the ghost.........." );
 
-    
+    int n;
 
     while(1){
         skull();
