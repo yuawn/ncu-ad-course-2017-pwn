@@ -24,7 +24,7 @@ void skull(){
     puts(" ~', ',    ,''~'',   ,' ,'~");
     puts("     ', ','       ',' ,'");
     puts("       ',: {'} {'} :,'");
-    puts("        ;   /^\\   ;");
+    puts("         ;   /^\\   ;");
     puts("          ~\\  ~  /~");
     puts("        ,' ,~~~~~, ',");
     puts("      ,' ,' ;~~~; ', ',");
@@ -56,12 +56,12 @@ int read_int(){
 int main(){
     setvbuf(stdout,0,2,0);
     setvbuf(stdin,0,2,0);
+    skull();
     puts( "Woooooo~~~ Where is the ghost.........." );
 
     int n;
 
     while(1){
-        skull();
         menu();
         n = read_int();
         switch( n ){
