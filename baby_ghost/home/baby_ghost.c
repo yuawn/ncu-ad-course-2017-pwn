@@ -127,7 +127,8 @@ void mod_human(){
         return;
     }
     printf( "New name:" );
-    read( 0 , buf, 0x1f );
+    int len = read( 0 , buf, 0x1f );
+    if( buf[len - 1] = '\n' ) buf[len - 1] = '\x00';
     h[i]->name = realloc( h[i]->name , strlen( buf ) );
     strncpy( h[i]->name , buf , strlen( buf ) );
     puts( "done!" );
