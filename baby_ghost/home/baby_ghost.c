@@ -79,7 +79,8 @@ void add_human(){
             printf( "Say something :" );
             read( 0 , h[i]->dsc , 0xff );
             printf( "Oh! Your name :" );
-            read( 0 , buf , 0x1f );
+            int len = read( 0 , buf , 0x1f );
+            if( buf[len - 1] = '\n' ) buf[len - 1] = '\x00';
             h[i]->name = strdup( buf );
             puts( "done!" );
             return;
@@ -183,6 +184,7 @@ int main(){
                 break;
             case 5:
                 show();
+                break;
             case 6:
                 puts("Bye!");
                 return 0;
