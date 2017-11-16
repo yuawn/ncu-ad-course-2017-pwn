@@ -54,12 +54,12 @@ int read_int(){
     return atoi(buf);
 }
 
-struct human{
+typedef struct human{
     char dsc[0x100];
     char *name;
 };
 
-struct ghost{
+typedef struct ghost{
     char dsc[0x18];
     char *name;
 };
