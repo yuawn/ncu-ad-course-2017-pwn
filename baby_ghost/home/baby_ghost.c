@@ -54,18 +54,18 @@ int read_int(){
     return atoi(buf);
 }
 
-typedef struct human{
+struct human{
     char dsc[0x100];
     char *name;
 };
 
-typedef struct ghost{
+struct ghost{
     char dsc[0x18];
     char *name;
 };
 
-human *h[10];
-ghost *g;
+struct human *h[10];
+struct ghost *g;
 
 void add_human(){
 
@@ -74,7 +74,7 @@ void add_human(){
 
     for( int i = 0 ; i < 10 ; ++i ){
         if( !h[i] ){
-            h[i] = malloc( sizeof(h) );
+            h[i] = malloc( sizeof(struct h) );
             memset( h[i]->dsc , 0 , 0x10 );
             pritnf( "Say something :" );
             read( 0 , h[i]->dsc , 0xff );
@@ -91,7 +91,7 @@ void add_human(){
 
 void add_ghost(){
     if( !g ){
-        g = malloc( sizeof( ghost ) );
+        g = malloc( sizeof( struct ghost ) );
         memset( g->dsc , 0 , 0x10 );
         printf( "ghost name size:" )
         int size = read_int();
