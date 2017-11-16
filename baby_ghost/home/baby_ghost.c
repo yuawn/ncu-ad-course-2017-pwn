@@ -114,12 +114,12 @@ void add_ghost(){
 void mod_human(){
     char buf[0x20];
     printf( "Index:" );
-    unsigned int idx = read_int() ;
-    if( idx > 9 ){
+    unsigned int i = read_int() ;
+    if( i > 9 ){
         puts( "Nop!" );
         exit(0);
     }
-    if( !h[idx] ){
+    if( !h[i] ){
         puts( "There is nobody." );
         return;
     }
