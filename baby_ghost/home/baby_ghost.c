@@ -76,7 +76,7 @@ void add_human(){
         if( !h[i] ){
             h[i] = malloc( sizeof(struct human) );
             memset( h[i]->dsc , 0 , 0x10 );
-            pritnf( "Say something :" );
+            printf( "Say something :" );
             read( 0 , h[i]->dsc , 0xff );
             printf( "Oh! Your name :" );
             read( 0 , buf , 0x1f );
