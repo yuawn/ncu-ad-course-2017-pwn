@@ -7,17 +7,16 @@ context.arch = 'amd64'
 
 e , l = ELF( './ncu_center' ) , ELF( './libc.so.6' )
 
-host , port = 'ctf.yuawn.idv.tw' , 10107
+host , port = 'ctf.yuawn.idv.tw' , 10111
 y = remote( host , port )
 
-def echo( data ):
-        y.sendafter( 'ice:' , '1' )
-        y.sendafter( 'say:' , data )
 
-def add( idx , data ):
+def add_h( name , dsc ):
         y.sendafter( 'ice:' , '2' )
         y.sendafter( '?:' , str( idx ) )
         y.sendafter( ':' , data )
+
+def add_g( name , dsc )
 
 def sho( idx ):
         y.sendafter( 'ice:' , '3' )

@@ -94,7 +94,9 @@ void add_ghost(){
     if( !g ){
         g = malloc( sizeof( struct ghost ) );
         memset( g->dsc , 0 , 0x10 );
-        printf( "ghost name size:" );
+        printf( "What does the ghost say :" );
+        read( 0 , g->dsc , 0x10 );
+        printf( "ghost name size :" );
         int size = read_int();
         char *tmp = NULL;
         tmp = malloc( size );
@@ -103,7 +105,7 @@ void add_ghost(){
             return;
         }
         g->name = tmp;
-        printf( "ghost name:" );
+        printf( "ghost name :" );
         read( 0 , g->name , size );
         puts( "You let me free, it must have some blood this night." );
         return;
