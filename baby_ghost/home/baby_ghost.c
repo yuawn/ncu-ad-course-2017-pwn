@@ -74,13 +74,13 @@ void add_human(){
 
     for( int i = 0 ; i < 10 ; ++i ){
         if( !h[i] ){
-            h[i] = malloc( sizeof(struct h) );
+            h[i] = malloc( sizeof(struct human) );
             memset( h[i]->dsc , 0 , 0x10 );
             pritnf( "Say something :" );
             read( 0 , h[i]->dsc , 0xff );
             printf( "Oh! Your name :" );
             read( 0 , buf , 0x1f );
-            h[i].name = strdup( buf );
+            h[i]->name = strdup( buf );
             puts( "done!" );
             return;
         }
@@ -93,7 +93,7 @@ void add_ghost(){
     if( !g ){
         g = malloc( sizeof( struct ghost ) );
         memset( g->dsc , 0 , 0x10 );
-        printf( "ghost name size:" )
+        printf( "ghost name size:" );
         int size = read_int();
         char *tmp = NULL;
         tmp = malloc( size );
